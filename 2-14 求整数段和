@@ -1,0 +1,55 @@
+#给定两个整数A和B，输出从A到B的所有整数以及这些数的和。
+#输入格式：
+#输入在一行中给出2个整数A和B，其中−100≤A≤B≤100，其间以空格分隔。
+#输出格式：
+#首先顺序输出从A到B的所有整数，每5个数字占一行，每个数字占5个字符宽度，向右对齐。最后在一行中按Sum = X的格式输出全部数字的和X。
+
+#解法1 使用C程序
+#include<stdio.h>
+int main()
+{    
+    int a,b,sum;    
+    sum = 0;	
+    int i=0;//执行次数用来记一行几个数    
+    scanf("%d %d",&a,&b);    
+    do    
+    {        
+        i++;        
+        printf("%5d",a);//要求每个数字占5字符	    
+        if(i==5&&a!=b)//a!=b是为了防止只输出一行的情况（如1 2 3 4 5 ）不换行        
+        {            
+            printf("\n");            
+            i=0;
+        }        
+            sum += a;        
+            a += 1;     
+    }
+            while(a<=b);    
+            printf("\n");//换行输出sum    
+            printf("Sum = %d",sum);    
+            return 0;
+}
+
+
+#解法2 Python程序
+a,b=input().split();
+c=0;su=0;g=""
+a,b,c,su=int(a),int(b),int(c),int(su)
+while a<=b:   #循环中分别判断
+    if a==-100:
+        s=" %d"%(a)
+    elif -99<=a<=-10 or a==100:
+        s="  %d"%(a)
+    elif -9<=a<=-1 or 10<=a<=99:
+        s="   %d"%(a)
+    else:
+        s="    %d"%(a)
+    g=g+s
+    su=a+su
+    c+=1 #记录个数
+    if c==5 or a==b:   #每五个就重置依次并打印
+        print(g)
+        g=""
+        c=0
+    a+=1
+print("sum = %d"%(su))
