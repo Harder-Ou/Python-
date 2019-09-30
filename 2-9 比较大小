@@ -1,0 +1,24 @@
+# 本题要求将输入的任意3个整数从小到大输出。
+# 输入格式:
+# 输入在一行中给出3个整数，其间以空格分隔。
+# 输出格式:
+# 在一行中将3个整数从小到大输出，其间以“->”相连。
+
+#解法1
+x,y,z=input().split()
+x,y,z=eval(x),eval(y),eval(z)
+if x > y :  
+    x,y = y,x  
+if x > z :  
+    x, z = z,x  
+if y > z :  
+    y, z = z,y  
+print("{}->{}->{}".format(x,y,z))
+
+#解法2
+x,y,z=input().split()
+x,y,z=eval(x),eval(y),eval(z)
+Big=max(x,y,z)
+Small=min(x,y,z)
+Mid=x+y+z-Max-Min
+print("{}->{}->{}".format(Small,Mid,Big))
