@@ -1,0 +1,20 @@
+# 给定两个均不超过9的正整数a和n，要求编写程序求a+aa+aaa++⋯+aa⋯a（n个a）之和。
+# 输入格式： 输入在一行中不超过9的正整数a和n
+# 输出格式： 在一行中按照“s = 对应的和”的格式输出。
+
+#a,b =input('输入a,b空格隔开:').split()
+#此时a,b为str型
+
+#a,b =map(int,input('输入a,b空格隔开:').split())
+#此时a,b为int型
+
+#a, b = eval(input('输入两个数，逗号隔开：'))
+# 也可以达到效果，a,b为int型
+
+a,n=map(int,input().split())
+sum=0
+i=1
+while i <= n:
+    sum+=a*pow(10, n-i)*i
+    i+=1
+print('s =',sum)
