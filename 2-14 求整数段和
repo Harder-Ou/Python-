@@ -31,7 +31,7 @@ int main()
 }
 
 
-#解法2 Python程序
+#解法2 Python程序（PTA中测试通不过）
 a,b=input().split();
 c=0;su=0;g=""
 a,b,c,su=int(a),int(b),int(c),int(su)
@@ -53,3 +53,15 @@ while a<=b:   #循环中分别判断
         c=0
     a+=1
 print("sum = %d"%(su))
+
+#解法3
+a, b = input().split()
+a, b = int(a), int(b)
+j = 0
+for i in range(a, b + 1):
+    j += 1
+    if j % 5 == 0 or j == b - a + 1:
+        print("{0:>5d}".format(i))
+    else:
+        print("{0:>5d}".format(i), end="")
+print("Sum = {0}".format((sum([i for i in range(a, b + 1)]))))
