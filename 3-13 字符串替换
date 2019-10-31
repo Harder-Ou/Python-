@@ -1,0 +1,23 @@
+本题要求编写程序，将给定字符串中的大写英文字母按以下对应规则替换：
+原字母 对应字母
+A Z
+B Y
+C X
+......
+输入格式：
+输入在一行中给出一个不超过80个字符、并以回车结束的字符串。
+输出格式：
+输出在一行中给出替换完成后的字符串。
+输入样例：
+Only the 11 CAPItaL LeTtERS are replaced.
+输出样例：
+Lnly the 11 XZKRtaO OeGtVIH are replaced.
+
+a = input()                          #对于输入的字符串，要求对于是大写的A-Z中的字母进行替换，正序的替换成逆序的
+b = []
+for n in a :
+   if"A" <= n <= "Z" :
+      b.append(chr(155-ord(n)))      #思路： 大写字母的第一个和最后一个的ASCII码之和为155。  
+   else:
+      b.append(n)
+print("".join(b))
